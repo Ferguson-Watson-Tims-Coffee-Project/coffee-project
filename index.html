@@ -11,23 +11,23 @@
 <form>
     <label for="roast-selection"></label>
     <select id="roast-selection">
+        <option>All</option>
         <option>light</option>
         <option>medium</option>
         <option>dark</option>
     </select>
     <input id="submit" type="submit" />
+    <label for="coffee-search">
+        <input type="text" id="coffee-search" placeholder="Search Coffee">
+    </label>
 </form>
 
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>ROAST</th>
-    </tr>
-    </thead>
-    <tbody id="coffees"></tbody>
-</table>
+<div id='coffees'>
+    <div class=coffee>
+        <div class=name></div>
+        <div class=roast></div>
+    </div>
+</div>
 
 <script src="main.js"></script>
 </body>

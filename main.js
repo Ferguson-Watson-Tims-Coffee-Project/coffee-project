@@ -1,18 +1,16 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    html += '<p>' + coffee.name + '</p>';
+    html += '<p>' + coffee.roast + '</p>';
 
     return html;
 }
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = coffees.length - 1; i >= 0; i--) {
+    for(var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
@@ -25,6 +23,20 @@ function updateCoffees(e) {
     coffees.forEach(function(coffee) {
         if (coffee.roast === selectedRoast) {
             filteredCoffees.push(coffee);
+        } else if (selectedRoast === 'All'){
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = renderCoffees(filteredCoffees);
+}
+//takes in the user input and only displays coffee name that includes the input
+function searchCoffees(e) {
+    e.preventDefault();
+    let searchedCoffee = searchRoast.value
+    let filteredCoffees = [];
+    coffees.forEach(function(coffee) {
+        if(coffee.name.toLowerCase().includes(searchedCoffee.toLowerCase())){
+            filteredCoffees.push(coffee)
         }
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
@@ -51,8 +63,15 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
+let searchRoast = document.querySelector('#coffee-search')
+
 
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+searchRoast.addEventListener('input', searchCoffees);
+roastSelection.addEventListener('change', updateCoffees);
+
+
+
 
