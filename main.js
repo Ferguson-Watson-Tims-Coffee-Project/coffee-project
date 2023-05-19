@@ -8,6 +8,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
+
 function renderCoffees(coffees) {
     var html = '';
     for(var i = 0; i < coffees.length; i++) {
