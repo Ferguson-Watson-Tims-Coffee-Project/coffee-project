@@ -44,11 +44,10 @@ function searchCoffees(e) {
     return tbody.innerHTML = renderCoffees(filteredCoffees);
 }
 function addCoffee(){
-    let coffeeId = {id: coffees.length + 1}
-    let coffeeName = {name: userName}
-    let userRoast = {roast: userSelection}
-    let userCoffee = coffeeId + coffeeName + userRoast
+    let coffeeId = coffees.length + 1
+    let userCoffee = {id: coffeeId, name: userName.value, roast: userSelection.value}
     coffees.push(userCoffee);
+    tbody.innerHTML = renderCoffees(coffees);
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -69,12 +68,14 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
+console.log(coffees);
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 let searchRoast = document.querySelector('#coffee-search')
-let userName = document.querySelector('#user-coffee').value
-let userSelection = document.querySelector('#user-type').value
+let userName = document.querySelector('#user-coffee')
+let userSelection = document.querySelector('#user-type')
 let userSubmit = document.querySelector('#add-coffee')
 
 
@@ -84,10 +85,6 @@ submitButton.addEventListener('click', updateCoffees);
 searchRoast.addEventListener('input', searchCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 roastSelection.addEventListener('change', searchCoffees);
-userSubmit.addEventListener('click', addCoffee)
-userSubmit.addEventListener('click', updateCoffees)
-
-
-
+userSubmit.addEventListener('click', addCoffee);
 
 
