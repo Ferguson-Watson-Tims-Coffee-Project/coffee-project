@@ -64,9 +64,11 @@
     </nav>
 </section>
 <!--Navbar Ends-->
+
 <div class="card"
      style="background-image: url('img/coffee_beans_md.png'); background-repeat: no-repeat; background-size: cover">
     <div class="card-body">
+        <!--Header-->
         <div class='row border border-2 bg-transparent mt-5'>
             <div class="container" style="background: tan">
                 <h1 class="text-center"><img src="img/coffee.svg" alt="coffee mug icon" class="icon-xs"> Menu</h1>
@@ -76,18 +78,22 @@
                 </div>
             </div>
         </div>
+        <!--Header End-->
         <div class="container">
             <div class="row m-2">
+                <!--Where Coffees Will Be Displayed-->
                 <div class="col-8">
                     <div id='coffees' class="row d-flex justify-content-between">
                     </div>
                 </div>
+                <!--Coffee Search-->
                 <div class="col-4">
                     <form>
                         <div class="row">
                             <div class="font-weight-bold" style="color: chocolate">
                                 <h5>Select Your Roast</h5>
                             </div>
+                            <!--Select for the roast filter-->
                             <div class="col-12 d-flex justify-content-center">
                                 <label for="roast-selection"></label>
                                 <select id="roast-selection" class="roast-options w-100 border rounded">
@@ -97,9 +103,12 @@
                                     <option>dark</option>
                                 </select>
                             </div>
+                            <!--End Roast Filter Select-->
+
                             <div class="mt-2" style="color: chocolate">
                                 <h5>Coffee Name</h5>
                             </div>
+                            <!--Coffee Search Text Box-->
                             <label for="coffee-search"></label>
                             <div class="col-12 form-group">
                                 <div class="w-100">
@@ -107,6 +116,7 @@
                                            placeholder="Search Coffee">
                                 </div>
                             </div>
+                            <!--End Search Text Box-->
                             <label for="submit"></label>
                             <div class="col-12 d-flex justify-content-center mt-4">
                                 <button id="submit" type="submit" class="w-100 btn btn-dark border rounded mt-1"
@@ -119,6 +129,7 @@
                             <div class="d-flex justify-content-start" style="color: chocolate">
                                 <h5>Don't see your coffee on the menu? Add it here!</h5>
                             </div>
+                            <!--Roast Options for New Coffee-->
                             <div class="col-12 d-flex justify-content-center">
                                 <label for="user-roast-type"></label>
                                 <select id="user-roast-type" class="w-100">
@@ -127,8 +138,10 @@
                                     <option>dark</option>
                                 </select>
                             </div>
+                            <!--End Roast Options-->
                         </div>
                         <div class="row">
+                            <!--Text Box For Adding New Coffee-->
                             <label for="user-coffee-name"></label>
                             <div class="col-12 form-group">
                                 <div class="w-100 mt-3">
@@ -137,7 +150,9 @@
                                 </div>
                             </div>
                         </div>
+                        <!--End New Coffee Text Box-->
                         <div class="row">
+                            <!--Button to Add New Coffee-->
                             <label for="add-coffee"></label>
                             <div class="d-flex justify-content-center">
                                 <button type="button" id="add-coffee" class="w-100 btn btn-dark border rounded mt-4"
